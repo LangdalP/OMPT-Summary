@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Runtime Entrypoints</title>
+  <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg .tg-yw4l{vertical-align:top}
+    pre {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <table class="tg">
+    <tr>
+      <th class="tg-031e">Lookup String Name</th>
+      <th class="tg-yw4l">Function Signature</th>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_enumerate_states"</td>
+      <td class="tg-yw4l">
+        <pre><code>
+typedef int (*ompt_enumerate_states_t) (
+    int current_state,
+    int *next_state,
+    const char **next_state_name
+);
+        </code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td class="tg-031e">"ompt_enumerate_mutex_impls"</td>
+      <td class="tg-yw4l">
+        <pre><code>
+typedef int (*ompt_enumerate_mutex_impls_t) (
+    int current_impl,
+    int *next_impl,
+    const char **next_impl_name
+);
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td class="tg-031e">"ompt_set_callback"</td>
+      <td class="tg-yw41">
+        <pre><code>
+typedef int (*ompt_set_callback_t) (
+    ompt_callbacks_t which,
+    ompt_callback_t callback
+);
+        </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_callback"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef int (*ompt_get_callback_t) (
+  ompt_callbacks_t which,
+  ompt_callback_t *callback
+);
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_thread_data"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef ompt_data_t *(*ompt_get_thread_data_t) (void);
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_num_places"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef int (*ompt_get_num_places_t) (void);
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_place_proc_ids"</td>
+      <td class="tg-yw41">
+      <pre><code></code>
+typedef int (*oompt_get_place_proc_ids_t) (
+    int place_num
+    int ids_size,
+    int *ids
+);
+      </pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_place_num"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef int (*ompt_get_place_num_t) (void);
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_partition_place_nums"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef int (*ompt_get_partition_place_nums_t) (
+    int place_nums_size,
+    int *place_nums
+);
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_proc_id"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef int (*ompt_get_proc_id_t) (void);
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_state"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef omp_state_t (*ompt_get_state_t) (
+    ompt_wait_id_t *wait_id
+);
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_parallel_info"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef int (*ompt_get_parallel_info_t) (
+    int ancestor_level,
+    ompt_data_t **parallel_data,
+    int *team_size
+);
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_task_info"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef int (*ompt_get_task_info_t) (
+    int ancestor_level,
+    ompt_task_type_t *type,
+    ompt_data_t **task_data,
+    ompt_frame_t **task_frame,
+    ompt_data_t **parallel_data,
+    int *thread_num
+);
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_num_devices"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef int (*ompt_get_num_devices_t) (void);
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_target_info"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef int (*ompt_get_target_info_t) (
+    uint64_t *device_num,
+    ompt_id_t *target_id,
+    ompt_id_t *host_op_id
+);
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">"ompt_get_unique_id"</td>
+      <td class="tg-yw41">
+      <pre><code>
+typedef uint64_t (*ompt_get_unique_id_t) (void);
+      </code></pre></td>
+    </tr>
+  </table>
+</body>
