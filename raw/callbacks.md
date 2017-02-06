@@ -1,0 +1,37 @@
+# Callback Overview
+
+These are the callbacks that tools can register for.
+
+## Mandatory callbacks
+
+- ompt_callback_thread_begin
+- ompt_callback_thread_end
+- ompt_callback_parallel_begin
+- ompt_callback_parallel_end
+- ompt_callback_task_create
+- ompt_callback_task_schedule
+- ompt_callback_implicit_task
+- ompt_callback_target
+- ompt_callback_target_data_op
+- ompt_callback_target_submit
+- ompt_callback_control_tool
+- ompt_callback_device_initialize
+
+## Optional callbacks
+
+- ompt_callback_idle
+- ompt_callback_sync_region_wait
+- ompt_callback_mutex_released
+- ompt_callback_task_dependences
+- ompt_callback_task_dependence
+- ompt_callback_work
+- ompt_callback_master
+- ompt_callback_target_map
+- ompt_callback_sync_region
+- ompt_callback_lock_init
+- ompt_callback_lock_destroy
+- ompt_callback_mutex_acquire
+- ompt_callback_mutex_acquired
+- ompt_callback_nest_lock
+- ompt_callback_flush
+- ompt_callback_cancel
