@@ -22,29 +22,43 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.tg {
-    margin: 2rem auto;
+h2 {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+table {
+    margin: 2rem 1rem;
     border-bottom: 2px solid #B2DCDE;
 }
 
-.tg th {
-    font-size: 1.4em;
+th {
+    font-size: 1.4rem;
     font-weight: bold;
     padding-bottom: 0.5em;
     padding-left: 1rem;
     text-align: left;
 }
 
-.tg td {
+td {
     padding: 1rem;
     vertical-align: middle;
 }
 
-.tg .name-cell {
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.name-cell {
     font-weight: bold;
 }
 
-.tg .code-cell {
+.code-cell {
     padding-top: 0;
     padding-bottom: 0;
 }
