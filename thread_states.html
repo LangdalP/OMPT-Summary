@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMPT Thread States</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="flex-container">
+  <div>
+    <h2>Thread States</h2>
+    <pre><code>
+typedef enum omp_state_e {
+    omp_state_work_serial                       = 0x000,
+    omp_state_work_parallel                     = 0x001,
+    omp_state_work_reduction                    = 0x002,
+
+    omp_state_wait_barrier                      = 0x010,
+    omp_state_wait_barrier_implicit_parallel    = 0x011,
+    omp_state_wait_barrier_implicit_workshare   = 0x012,
+    omp_state_wait_barrier_implicit             = 0x013,
+    omp_state_wait_barrier_explicit             = 0x014,
+
+    omp_state_wait_taskwait                     = 0x020,
+    omp_state_wait_taskgroup                    = 0x021,
+
+    omp_state_wait_mutex                        = 0x040,
+    omp_state_wait_lock                         = 0x041,
+    omp_state_wait_critical                     = 0x042,
+    omp_state_wait_atomic                       = 0x043,
+    omp_state_wait_ordered                      = 0x044,
+
+    omp_state_wait_target                       = 0x080,
+    omp_state_wait_target_map                   = 0x081,
+
+    omp_state_wait_target_update                = 0x082,
+
+    omp_state_idle                              = 0x100,
+    omp_state_overhead                          = 0x101,
+    omp_state_undefined                         = 0x102
+} omp_state_t;
+    </code></pre>
+  </div>
+</body>
+</html>
